@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mortgage Repayment Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="calculator" aria-label="Mortgage calculator">
+        <div class="panel panel--form">
+          <header class="form-header">
+            <h1>Mortgage Calculator</h1>
+            <button class="clear-button" type="button" id="clearBtn">Clear All</button>
+          </header>
+
+          <form id="mortgageForm" novalidate>
+            <div class="field-group" data-field="amount">
+              <label for="amount">Mortgage Amount</label>
+              <div class="input-with-addon input-with-addon--prefix">
+                <span class="addon">£</span>
+                <input id="amount" name="amount" type="text" inputmode="numeric" autocomplete="off" />
+              </div>
+              <p class="error-text" id="amountError">This field is required</p>
+            </div>
+
+            <div class="row">
+              <div class="field-group" data-field="term">
+                <label for="term">Mortgage Term</label>
+                <div class="input-with-addon input-with-addon--suffix">
+                  <input id="term" name="term" type="number" min="0" step="1" />
+                  <span class="addon">years</span>
+                </div>
+                <p class="error-text" id="termError">This field is required</p>
+              </div>
+
+              <div class="field-group" data-field="rate">
+                <label for="rate">Interest Rate</label>
+                <div class="input-with-addon input-with-addon--suffix">
+                  <input id="rate" name="rate" type="number" min="0" step="0.01" />
+                  <span class="addon">%</span>
+                </div>
+                <p class="error-text" id="rateError">This field is required</p>
+              </div>
+            </div>
+
+            <fieldset class="field-group fieldset" data-field="type">
+              <legend>Mortgage Type</legend>
+
+              <label class="radio-card" for="repayment">
+                <input id="repayment" type="radio" name="mortgageType" value="repayment" />
+                <span class="radio-ui"></span>
+                <span>Repayment</span>
+              </label>
+
+              <label class="radio-card" for="interestOnly">
+                <input id="interestOnly" type="radio" name="mortgageType" value="interest-only" />
+                <span class="radio-ui"></span>
+                <span>Interest Only</span>
+              </label>
+
+              <p class="error-text" id="typeError">This field is required</p>
+            </fieldset>
+
+            <button class="calculate-button" type="submit">
+              <img src="assets/images/icon-calculator.svg" alt="" aria-hidden="true" />
+              Calculate Repayments
+            </button>
+          </form>
+        </div>
+
+        <div class="panel panel--results" id="resultsPanel">
+          <section class="results-empty" id="emptyState" aria-live="polite">
+            <img src="assets/images/illustration-empty.svg" alt="" aria-hidden="true" />
+            <h2>Results shown here</h2>
+            <p>
+              Complete the form and click “calculate repayments” to see what your
+              monthly repayments would be.
+            </p>
+          </section>
+
+          <section class="results-complete" id="completeState" hidden aria-live="polite">
+            <h2>Your results</h2>
+            <p>
+              Your results are shown below based on the information you provided. To
+              adjust the results, edit the form and click “calculate repayments” again.
+            </p>
+
+            <div class="result-card">
+              <p class="result-label">Your monthly repayments</p>
+              <p class="result-value result-value--highlight" id="monthlyRepayment">£0.00</p>
+
+              <div class="divider"></div>
+
+              <p class="result-label">Total you'll repay over the term</p>
+              <p class="result-value" id="totalRepayment">£0.00</p>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
