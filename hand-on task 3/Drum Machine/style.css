@@ -17,7 +17,12 @@ body {
   place-items: center;
   padding: 1rem;
   font-family: "Trebuchet MS", "Segoe UI", sans-serif;
-  background: radial-gradient(circle at top, #838383 0%, #707070 45%, #616161 100%);
+  background: radial-gradient(
+    circle at top,
+    #838383 0%,
+    #707070 45%,
+    #616161 100%
+  );
 }
 
 .machine-shell {
@@ -47,7 +52,10 @@ body {
   background: #8d8d8d;
   cursor: pointer;
   box-shadow: 0 4px 0 rgba(0, 0, 0, 0.45);
-  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.2s ease;
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.1s ease,
+    background-color 0.2s ease;
 }
 
 .drum-pad:hover {
@@ -93,6 +101,18 @@ body {
   background: #111;
   padding: 3px;
   cursor: pointer;
+}
+
+span.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 .knob {
