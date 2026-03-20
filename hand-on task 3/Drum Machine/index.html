@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drum Machine</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="machine-shell" id="drum-machine">
+    <section class="drum-pad-grid" aria-label="Drum pads">
+      <button class="drum-pad" id="Heater-1" data-key="Q">Q<audio class="clip" id="Q" preload="auto"></audio></button>
+      <button class="drum-pad" id="Heater-2" data-key="W">W<audio class="clip" id="W" preload="auto"></audio></button>
+      <button class="drum-pad" id="Heater-3" data-key="E">E<audio class="clip" id="E" preload="auto"></audio></button>
+      <button class="drum-pad" id="Heater-4" data-key="A">A<audio class="clip" id="A" preload="auto"></audio></button>
+      <button class="drum-pad" id="Clap" data-key="S">S<audio class="clip" id="S" preload="auto"></audio></button>
+      <button class="drum-pad" id="Open-HH" data-key="D">D<audio class="clip" id="D" preload="auto"></audio></button>
+      <button class="drum-pad" id="Kick-n-Hat" data-key="Z">Z<audio class="clip" id="Z" preload="auto"></audio></button>
+      <button class="drum-pad" id="Kick" data-key="X">X<audio class="clip" id="X" preload="auto"></audio></button>
+      <button class="drum-pad" id="Closed-HH" data-key="C">C<audio class="clip" id="C" preload="auto"></audio></button>
+    </section>
+
+    <section class="controls" aria-label="Controls">
+      <h1 class="brand">Drum Machine</h1>
+
+      <div class="toggle-group">
+        <p>Power</p>
+        <button button class="toggle" id="power-toggle" type="button" aria-pressed="true" title="Toggle Power">
+          <span class="knob"></span>
+          <span class="visually-hidden">Toggle Power</span>
+        </button>
+      </div>
+
+      <p id="display" class="display" aria-live="polite">Heater Kit</p>
+
+      <label class="volume-wrap" for="volume-slider">
+        Volume
+        <input id="volume-slider" type="range" min="0" max="100" step="1" value="50" />
+      </label>
+
+      <div class="toggle-group">
+        <p>Bank</p>
+        <buttonbutton class="toggle" id="bank-toggle" type="button" aria-pressed="false" title="Toggle Bank">
+          <span class="knob"></span>
+          <span class="visually-hidden">Toggle Bank</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
